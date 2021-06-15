@@ -11,9 +11,10 @@ describe('app routes', () => {
 
   it('uses POST  to create a response from /echo', async() => {
     const res = await request(app)
-      .post('/echo');
+      .post('/echo')
+      .send('echo');
 
-    expect(res.text).toEqual('Boo');
+    expect(res.text).toEqual('echo');
   });
 
   it('receives red from /red using GET', async() => {
