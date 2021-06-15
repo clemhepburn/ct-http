@@ -16,4 +16,11 @@ describe('app routes', () => {
     expect(res.text).toEqual('Boo');
   });
 
+  it('receives red from /red using GET', async() => {
+    const res = await request(app)
+      .get('/red');
+
+    expect(res.text).toEqual('<h1>red</h1>');
+  });
+
 });
